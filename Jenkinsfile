@@ -8,7 +8,7 @@ pipeline {
         }
         stage('terraform plan') {
             steps {
-                echo "terraform plan"
+                sh 'terraform plan'
             }
         }
         stage('Choice') {
@@ -20,7 +20,7 @@ pipeline {
             }  }
         stage('terraform apply') {
             steps {
-                echo "terraform apply"
+               sh 'terraform workspace new QA && terraform workspace select QA && terraform apply'
             }
         }
     }
