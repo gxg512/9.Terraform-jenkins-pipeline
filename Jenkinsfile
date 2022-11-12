@@ -26,7 +26,7 @@ pipeline {
             }  }
         stage('terraform apply') {
             steps {
-               sh 'terraform workspace new QA && terraform workspace select QA && terraform apply'
+               sh 'terraform workspace new QA && terraform workspace select QA'
             }
         }
     }
