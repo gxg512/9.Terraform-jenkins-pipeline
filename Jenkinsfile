@@ -8,6 +8,7 @@ pipeline {
     stages {
         stage('terraform init and validate') {
             steps {
+                sh 'echo ${AWS_ACCESS_KEY_ID}'
                 sh 'terraform init && terraform fmt && terraform validate'
             }
         }
